@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         showToast("onStart");
-        Log.i(TAG, "OnStart");
+        Log.e(TAG, "OnStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         showToast("onResume");
-        Log.i(TAG, "OnResume");
+        Log.w(TAG, "OnResume");
     }
 
     @Override
@@ -54,19 +54,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         showToast("onRestart");
-        Log.i(TAG, "OnRestart");
+        Log.d(TAG, "OnRestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         showToast("onDestroy");
-        Log.i(TAG, "OnDestroy");
+        Log.v(TAG, "OnDestroy");
     }
 
     private void showToast(String text) {
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
         toast.show();
     }
 }
