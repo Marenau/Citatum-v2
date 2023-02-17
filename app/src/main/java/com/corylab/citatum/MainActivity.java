@@ -47,21 +47,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         showToast("onStop");
-        Log.i(TAG, "OnStop");
+        Log.d(TAG, "OnStop");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         showToast("onRestart");
-        Log.d(TAG, "OnRestart");
+        Log.v(TAG, "OnRestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         showToast("onDestroy");
-        Log.v(TAG, "OnDestroy");
+        Log.wtf(TAG, "OnDestroy");
     }
 
     private void showToast(String text) {
