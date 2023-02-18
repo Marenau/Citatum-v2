@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Citatum</string>
+
+    <string name="home_app_text">CITATUM</string>
+    <string name="tags_text">Tags:</string>
+
+    <string name="home_bookmark_name">Bookmark image</string>
+    <string name="tags_name">Tags text</string>
 </resources>
