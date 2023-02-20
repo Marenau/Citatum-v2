@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">Citatum</string>
 
+    <string name="default_text">default</string>
+
     <string name="home_app_text">CITATUM</string>
     <string name="tags_text">Tags:</string>
-
     <string name="home_bookmark_name">Bookmark image</string>
     <string name="tags_name">Tags text</string>
+
+    <string name="welcome_morning_text">Доброе утро!</string>
+    <string name="welcome_day_text">Добрый день!</string>
+    <string name="welcome_evening_text">Добрый вечер!</string>
+    <string name="welcome_night_text">Доброй ночи!</string>
+
+    <string name="add_button">добавить</string>
+
+    <string name="write_text_request">Введите текст...</string>
+
+    <string name="imagine">imagine</string>
+
+    <string name="temp_date">00:00, 1 января 1970</string>
 </resources>
