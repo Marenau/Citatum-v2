@@ -3,32 +3,38 @@ package com.corylab.citatum;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.corylab.citatum.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         initIt();
     }
 
     private void initIt() {
-        TextView pageText = findViewById(R.id.page_name);
-        pageText.setText(R.string.home_app_text);
+        binding.pageName.setText(R.string.home_app_text);
+        binding.welcomeText.setText(R.string.welcome_day_text);
+        binding.dateText.setText(R.string.temp_date);
+        binding.tagsText.setText(R.string.tags_text);
+        binding.quoteEditText.setHint(R.string.write_text_request);
 
-        TextView welcomeText = findViewById(R.id.welcome_text);
-        welcomeText.setText(R.string.welcome_day_text);
+        binding.addButton.setText(R.string.add_button);
+        binding.addButton.setOnClickListener(view -> Log.i("Citatum", "Button is pressed!"));
 
-        TextView dateText = findViewById(R.id.date_text);
-        dateText.setText(R.string.temp_date);
-
-        TextView tagsText = findViewById(R.id.tags_text);
-        tagsText.setText(R.string.tags_text);
-
-        ImageView image = findViewById(R.id.image);
-        image.setImageResource(R.drawable.colors);
+        binding.image.setImageResource(R.drawable.colors);
     }
 }
