@@ -19,7 +19,10 @@
 
     <string name="imagine">imagine</string>
 
-    <string name="temp_date">00:00, 1 января 1970</string>
+    <string name="current_date">Среда, 1 января, 1970, 00:00</string>
 
     <string name="description_of_edit_text">Write text there</string>
+
+    <string name="repository_page">Репозиторий</string>
+    <string name="return_button">возврат</string>
 </resources>
