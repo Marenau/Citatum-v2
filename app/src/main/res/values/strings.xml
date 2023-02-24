@@ -24,7 +24,7 @@
 
     <string name="add_button">добавить</string>
 
-    <string name="write_text_request">Введите текст...</string>
+    <string name="write_text_request">Введите текст…</string>
 
     <string name="imagine">imagine</string>
 
@@ -34,4 +34,6 @@
 
     <string name="repository_page">Репозиторий</string>
     <string name="return_button">возврат</string>
+
+    <string name="division_line">Line for division</string>
 </resources>

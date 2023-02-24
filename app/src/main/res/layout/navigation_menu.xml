@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- ScrollView для прокрутки навигационного меню -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll_view_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
@@ -11,11 +14,13 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="1.0">
 
+    <!-- LinearLayout с категориями меню -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- TextView для отображения текста и изображения "Настройки" -->
         <TextView
             android:id="@+id/settings_text"
             android:layout_width="wrap_content"
@@ -30,15 +35,18 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/settings_icon" />
 
+        <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_first"
             android:layout_width="250dp"
             android:layout_height="3dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- TextView для отображения текста и изображения "Создать" -->
         <TextView
             android:id="@+id/pencil_text"
             android:layout_width="wrap_content"
@@ -53,15 +61,18 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/pencil_icon" />
 
+        <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_second"
             android:layout_width="250dp"
             android:layout_height="3dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- TextView для отображения текста и изображения "Главная" -->
         <TextView
             android:id="@+id/hub_text"
             android:layout_width="wrap_content"
@@ -76,6 +87,7 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/hub_icon" />
 
+        <!-- TextView для отображения текста и изображения "Репозиторий" -->
         <TextView
             android:id="@+id/repository_text"
             android:layout_width="wrap_content"
@@ -90,6 +102,22 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/repository_icon" />
 
+        <!-- TextView для отображения текста и изображения "Метки" -->
+        <TextView
+            android:id="@+id/tags_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/gothampro"
+            android:gravity="center"
+            android:text="@string/category_tags_text"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:drawableStartCompat="@drawable/tag_icon" />
+
+        <!-- TextView для отображения текста и изображения "Закладки" -->
         <TextView
             android:id="@+id/bookmark_text"
             android:layout_width="wrap_content"
@@ -104,6 +132,7 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/bookmark_icon" />
 
+        <!-- TextView для отображения текста и изображения "Корзина" -->
         <TextView
             android:id="@+id/basket_text"
             android:layout_width="wrap_content"
@@ -118,15 +147,18 @@
             android:textSize="24sp"
             app:drawableStartCompat="@drawable/basket_icon" />
 
+        <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_third"
             android:layout_width="250dp"
             android:layout_height="3dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
+            android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <!-- TextView для отображения текста и изображения "Оставить отзыв" -->
         <TextView
             android:id="@+id/feedback_text"
             android:layout_width="wrap_content"
