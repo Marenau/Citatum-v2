@@ -80,8 +80,8 @@
                 <!-- CardView в качестве разделительной полосы -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_marginVertical="10dp"
                     android:layout_height="3dp"
+                    android:layout_marginVertical="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/light_blue" />
@@ -98,21 +98,25 @@
                 android:fontFamily="@font/gothampro"
                 android:text="@string/default_text"
                 android:textColor="@color/black"
-                android:textSize="@dimen/middle_text_size"
+                android:textSize="@dimen/lite_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <!-- Кнопка, которая вызывает другую активность -->
             <Button
                 android:id="@+id/intent_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="190dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/red_add_button"
+                android:fontFamily="@font/gothampro_medium"
+                android:onClick="onButtonClick"
                 android:text="@string/default_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/lite_text_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/transmitted_text"
-                android:onClick="onButtonClick"/>
+                app:layout_constraintTop_toBottomOf="@+id/transmitted_text" />
 
             <!-- Поле ввода -->
             <EditText
@@ -125,8 +129,7 @@
                 android:fontFamily="@font/gothampro_light"
                 android:hint="@string/description_of_edit_text"
                 android:inputType="textMultiLine"
-                android:textColor="@null"
-                android:textColorHint="@color/black"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/intent_button" />
 

@@ -54,7 +54,7 @@
                 android:fontFamily="@font/gothampro"
                 android:text="@string/default_text"
                 android:textColor="@color/black"
-                android:textSize="@dimen/middle_text_size"
+                android:textSize="@dimen/lite_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/page_name" />
 
@@ -68,6 +68,21 @@
                 android:text="@string/default_text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/transmission_text" />
+
+            <!-- Поле ввода -->
+            <EditText
+                android:id="@+id/quote_edit_text"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:fontFamily="@font/gothampro_light"
+                android:hint="@string/description_of_edit_text"
+                android:inputType="textMultiLine"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/return_button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

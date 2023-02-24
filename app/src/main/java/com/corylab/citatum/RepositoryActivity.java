@@ -32,7 +32,7 @@ public class RepositoryActivity extends AppCompatActivity {
 
         binding.returnButton.setOnClickListener(view -> {
             Intent intent = new Intent();
-            intent.putExtra("resultText", "Первая активность");
+            intent.putExtra("resultText", binding.quoteEditText.getText().toString());
             setResult(Activity.RESULT_OK, intent);
             finish();
         });
