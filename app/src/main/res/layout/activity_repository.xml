@@ -65,7 +65,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
+                android:backgroundTint="@color/light_red"
+                android:fontFamily="@font/gothampro_medium"
                 android:text="@string/default_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/lite_text_size"
+                app:cornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/transmission_text" />
 

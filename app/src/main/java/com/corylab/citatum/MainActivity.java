@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public void onButtonClick(View view) {
         Log.i("Citatum", "Button is pressed!");
         Intent intent = new Intent(this, RepositoryActivity.class);
-        intent.putExtra("Text", binding.quoteEditText.getText());
+        intent.putExtra("Text", binding.quoteEditText.getText().toString());
         startActivityForResult(intent, 1);
     }
 

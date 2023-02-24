@@ -8,6 +8,15 @@
     <string name="home_bookmark_name">Bookmark image</string>
     <string name="tags_name">Tags text</string>
 
+    <string name="category_settings_text">Настройки</string>
+    <string name="category_pencil_text">Создать</string>
+    <string name="category_hub_text">Главная</string>
+    <string name="category_repository_text">Репозиторий</string>
+    <string name="category_tags_text">Метки</string>
+    <string name="category_bookmarks_text">Закладки</string>
+    <string name="category_basket_text">Корзина</string>
+    <string name="category_feedback_text">Оставить отзыв</string>
+
     <string name="welcome_morning_text">Доброе утро!</string>
     <string name="welcome_day_text">Добрый день!</string>
     <string name="welcome_evening_text">Добрый вечер!</string>
