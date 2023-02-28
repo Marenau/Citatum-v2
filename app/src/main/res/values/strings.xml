@@ -23,6 +23,7 @@
     <string name="welcome_night_text">Доброй ночи!</string>
 
     <string name="add_button">добавить</string>
+    <string name="create_button">создать</string>
 
     <string name="write_text_request">Введите текст…</string>
 

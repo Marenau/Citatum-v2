@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scroll_view_menu"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/left_relative_width"
     android:layout_height="match_parent"
     android:background="@color/background_color"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -25,22 +25,22 @@
             android:id="@+id/settings_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:drawablePadding="10dp"
+            android:layout_marginStart="16dp"
             android:fontFamily="@font/gothampro"
             android:gravity="center"
             android:text="@string/category_settings_text"
             android:textColor="@color/light_blue"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/settings_icon" />
 
         <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_first"
-            android:layout_width="250dp"
+            android:layout_width="@dimen/navigation_rectangle_width"
             android:layout_height="3dp"
-            android:layout_marginStart="16dp"
+            android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
@@ -58,15 +58,15 @@
             android:gravity="center"
             android:text="@string/category_pencil_text"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/pencil_icon" />
 
         <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_second"
-            android:layout_width="250dp"
+            android:layout_width="@dimen/navigation_rectangle_width"
             android:layout_height="3dp"
-            android:layout_marginStart="16dp"
+            android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
@@ -84,7 +84,7 @@
             android:gravity="center"
             android:text="@string/category_hub_text"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/hub_icon" />
 
         <!-- TextView для отображения текста и изображения "Репозиторий" -->
@@ -99,7 +99,7 @@
             android:gravity="center"
             android:text="@string/category_repository_text"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/repository_icon" />
 
         <!-- TextView для отображения текста и изображения "Метки" -->
@@ -114,7 +114,7 @@
             android:gravity="center"
             android:text="@string/category_tags_text"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/tag_icon" />
 
         <!-- TextView для отображения текста и изображения "Закладки" -->
@@ -129,7 +129,7 @@
             android:gravity="center"
             android:text="@string/category_bookmarks_text"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/bookmark_icon" />
 
         <!-- TextView для отображения текста и изображения "Корзина" -->
@@ -144,15 +144,15 @@
             android:gravity="center"
             android:text="@string/category_basket_text"
             android:textColor="@color/light_red"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/basket_icon" />
 
         <!-- ImageView в качестве разделительной полосы -->
         <ImageView
             android:id="@+id/division_rectangle_third"
-            android:layout_width="250dp"
+            android:layout_width="@dimen/navigation_rectangle_width"
             android:layout_height="3dp"
-            android:layout_marginStart="16dp"
+            android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:contentDescription="@string/division_line"
             android:src="@drawable/division_rectangle"
@@ -171,7 +171,7 @@
             android:gravity="center"
             android:text="@string/category_feedback_text"
             android:textColor="@color/light_blue"
-            android:textSize="24sp"
+            android:textSize="@dimen/navigation_left_text"
             app:drawableStartCompat="@drawable/feedback_icon" />
 
     </LinearLayout>

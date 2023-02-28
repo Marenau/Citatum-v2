@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Основной контейнер, содержащий элементы интерфейса -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/central_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <!-- TextView для отображения названия страницы -->
+    <TextView
+        android:id="@+id/page_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothampro_black"
+        android:gravity="center"
+        android:text="@string/default_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/page_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/red_bookmark"
+        app:layout_constraintEnd_toStartOf="@+id/red_bookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Изображение красной закладки -->
+    <ImageView
+        android:id="@+id/red_bookmark"
+        android:layout_width="60dp"
+        android:layout_height="138dp"
+        android:layout_marginEnd="25dp"
+        android:contentDescription="@string/home_bookmark_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_bookmark" />
+
+    <!-- LinearLayout с приветственным текстом, датой и разделительной полосой -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_name">
+
+        <!-- TextView с приветствием -->
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gothampro"
+            android:text="@string/default_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/middle_text_size" />
+
+        <!-- TextView с датой -->
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gothampro"
+            android:text="@string/default_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/lite_text_size" />
+
+        <!-- ImageView в качестве разделительной полосы -->
+        <ImageView
+            android:id="@+id/division_rectangle"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/division_rectangle"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <!-- Отображает текст, переданный в текущую активность -->
+    <TextView
+        android:id="@+id/transmitted_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/tags_name"
+        android:fontFamily="@font/gothampro"
+        android:text="@string/default_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/lite_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <!-- Кнопка, которая вызывает другую активность -->
+    <Button
+        android:id="@+id/intent_button"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/light_red"
+        android:fontFamily="@font/gothampro_medium"
+        android:onClick="onButtonClick"
+        android:text="@string/default_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/lite_text_size"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transmitted_text" />
+
+    <!-- Поле ввода -->
+    <EditText
+        android:id="@+id/quote_edit_text"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:fontFamily="@font/gothampro_light"
+        android:hint="@string/description_of_edit_text"
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intent_button" />
+
+    <!-- Изображение -->
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/imagine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quote_edit_text"
+        app:srcCompat="@drawable/colors" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

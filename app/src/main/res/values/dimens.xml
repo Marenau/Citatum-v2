@@ -3,6 +3,8 @@
     <dimen name="page_text_size">60sp</dimen>
     <dimen name="middle_text_size">30sp</dimen>
     <dimen name="lite_text_size">20sp</dimen>
-
     <dimen name="left_relative_width">300dp</dimen>
+    <dimen name="navigation_button_text">25sp</dimen>
+    <dimen name="navigation_left_text">25sp</dimen>
+    <dimen name="navigation_rectangle_width">260dp</dimen>
 </resources>
