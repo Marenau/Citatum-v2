@@ -8,6 +8,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
 
+    <!-- Основной ConstraintLayout, содержащий две иконки и кнопку -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -17,16 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/search_button"
-            android:layout_width="34dp"
-            android:layout_height="29dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/search_icon" />
-
+        <!-- Иконка меню -->
         <ImageView
             android:id="@+id/menu_button"
             android:layout_width="34dp"
@@ -37,8 +29,20 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/menu_icon" />
 
+        <!-- Иконка поиска -->
+        <ImageView
+            android:id="@+id/search_button"
+            android:layout_width="34dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/search_icon" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Кнопка "Создать" -->
     <Button
         android:id="@+id/button"
         android:layout_width="230dp"

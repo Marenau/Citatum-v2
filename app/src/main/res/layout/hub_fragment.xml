@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Основной контейнер, содержащий элементы интерфейса -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,65 +33,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home_bookmark" />
 
-    <!-- LinearLayout с приветственным текстом, датой и разделительной полосой -->
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/page_name">
-
-        <!-- TextView с приветствием -->
-        <TextView
-            android:id="@+id/welcome_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/gothampro"
-            android:text="@string/default_text"
-            android:textColor="@color/black"
-            android:textSize="@dimen/middle_text_size" />
-
-        <!-- TextView с датой -->
-        <TextView
-            android:id="@+id/date_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/gothampro"
-            android:text="@string/default_text"
-            android:textColor="@color/black"
-            android:textSize="@dimen/lite_text_size" />
-
-        <!-- ImageView в качестве разделительной полосы -->
-        <ImageView
-            android:id="@+id/division_rectangle"
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:layout_marginTop="3dp"
-            android:src="@drawable/division_rectangle"
-            app:layout_constraintStart_toStartOf="parent" />
-    </LinearLayout>
-
-    <!-- Отображает текст, переданный в текущую активность -->
+    <!-- Отображает текст, переданный в текущий фрагмент -->
     <TextView
         android:id="@+id/transmitted_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/tags_name"
         android:fontFamily="@font/gothampro"
         android:text="@string/default_text"
         android:textColor="@color/black"
         android:textSize="@dimen/lite_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/red_bookmark" />
 
-    <!-- Кнопка, которая вызывает другую активность -->
+    <!-- Кнопка, которая вызывает другой фрагмент -->
     <Button
         android:id="@+id/intent_button"
         android:layout_width="190dp"
@@ -122,17 +78,5 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intent_button" />
-
-    <!-- Изображение -->
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/imagine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quote_edit_text"
-        app:srcCompat="@drawable/colors" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

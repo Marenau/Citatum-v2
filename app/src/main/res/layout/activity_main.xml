@@ -13,10 +13,13 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
+
+        <!-- Основной контейнер для экранов -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Контейнер для главного фрагмента -->
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/main_fragment_container_view"
                 android:layout_width="match_parent"
@@ -28,6 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout="@layout/hub_fragment" />
 
+            <!-- Контейнер для фрагмента нижней навигации -->
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/bottom_fragment_container_view"
                 android:layout_width="match_parent"
@@ -36,8 +40,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout="@layout/bottom_navigation_fragment" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
 
@@ -52,12 +56,13 @@
         android:clickable="true"
         android:focusable="true">
 
-
+        <!-- Контейнер для фрагмента боковой навигации -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/left_fragment_container_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/navigation_menu" />
+
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

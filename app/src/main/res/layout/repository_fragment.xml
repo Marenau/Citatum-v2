@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home_bookmark" />
 
-    <!-- Отображает текст, переданный в текущую активность -->
+    <!-- Отображает текст, переданный в текущий фрагмент -->
     <TextView
         android:id="@+id/transmission_text"
         android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/page_name" />
 
-    <!-- Кнопка, которая возвращает в изначальную активность -->
+    <!-- Кнопка, которая вызвращает в вызвавший фрагмент -->
     <Button
         android:id="@+id/return_button"
         android:layout_width="wrap_content"

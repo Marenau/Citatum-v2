@@ -31,7 +31,7 @@
 
     <string name="current_date">Среда, 1 января, 1970, 00:00</string>
 
-    <string name="description_of_edit_text">Write text there</string>
+    <string name="description_of_edit_text">Write text here</string>
 
     <string name="repository_page">Репозиторий</string>
     <string name="return_button">возврат</string>
