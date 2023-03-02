@@ -18,8 +18,7 @@
             android:layout_height="match_parent">
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView"
-                android:name="com.corylab.citatum.fragment.HubFragment"
+                android:id="@+id/main_fragment_container_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="50dp"
@@ -30,8 +29,7 @@
                 tools:layout="@layout/hub_fragment" />
 
             <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/fragmentContainerView2"
-                android:name="com.corylab.citatum.fragment.BottomNavigationFragment"
+                android:id="@+id/bottom_fragment_container_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -56,8 +54,7 @@
 
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView3"
-            android:name="com.corylab.citatum.fragment.LeftNavigationFragment"
+            android:id="@+id/left_fragment_container_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/navigation_menu" />
