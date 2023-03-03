@@ -38,13 +38,9 @@ public class RepositoryFragment extends Fragment {
         super.onCreate(savedInstanceState);
         fragmentManager = getParentFragmentManager();
 
-        fragmentManager.setFragmentResultListener("change to RepositoryFragment", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                Log.i("Citatum", "OK");
-                String results = result.getString("resultText").toString();
-                binding.transmissionText.setText(results);
-            }
+        fragmentManager.setFragmentResultListener("change to RepositoryFragment", this, (requestKey, result) -> {
+            String results = result.getString("resultText");
+            binding.transmissionText.setText(results);
         });
     }
 

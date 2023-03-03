@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +16,6 @@ import androidx.fragment.app.FragmentResultListener;
 import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
 import com.corylab.citatum.databinding.HubFragmentBinding;
-import com.corylab.citatum.databinding.RepositoryFragmentBinding;
 
 public class HubFragment extends Fragment {
 
@@ -40,13 +38,9 @@ public class HubFragment extends Fragment {
         super.onCreate(savedInstanceState);
         fragmentManager = getParentFragmentManager();
 
-        fragmentManager.setFragmentResultListener("change to HubFragment", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                Log.i("Citatum", "OK");
-                String results = result.getString("resultText").toString();
-                binding.transmittedText.setText(results);
-            }
+        fragmentManager.setFragmentResultListener("change to HubFragment", this, (requestKey, result) -> {
+            String results = result.getString("resultText");
+            binding.transmittedText.setText(results);
         });
     }
 
