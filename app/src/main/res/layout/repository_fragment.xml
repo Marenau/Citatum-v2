@@ -11,10 +11,11 @@
     <!-- TextView для отображения названия страницы -->
     <TextView
         android:id="@+id/page_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/gothampro_black"
-        android:gravity="center"
         android:text="@string/default_text"
         android:textColor="@color/black"
         android:textSize="@dimen/page_text_size"
@@ -47,7 +48,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/lite_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/page_name" />
+        app:layout_constraintTop_toBottomOf="@+id/red_bookmark" />
 
     <!-- Кнопка, которая вызвращает в вызвавший фрагмент -->
     <Button
@@ -74,7 +75,6 @@
         android:layout_marginTop="8dp"
         android:background="@null"
         android:fontFamily="@font/gothampro_light"
-        android:hint="@string/description_of_edit_text"
         android:inputType="textMultiLine"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"

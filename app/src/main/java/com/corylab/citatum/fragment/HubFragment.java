@@ -11,96 +11,69 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 
+import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
+import com.corylab.citatum.databinding.HubFragmentBinding;
+import com.corylab.citatum.databinding.RepositoryFragmentBinding;
 
 public class HubFragment extends Fragment {
+
+    FragmentManager fragmentManager;
+    HubFragmentBinding binding;
+    MainActivity mainActivity;
 
     public HubFragment() {
         super(R.layout.hub_fragment);
     }
 
-    private void showToast(String text) {
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getContext(), text, duration);
-        toast.show();
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        mainActivity = (MainActivity) context;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        showToast("onCreate");
-        Log.i("Citatum", "onCreate");
+        fragmentManager = getParentFragmentManager();
+
+        fragmentManager.setFragmentResultListener("change to HubFragment", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                Log.i("Citatum", "OK");
+                String results = result.getString("resultText").toString();
+                binding.transmittedText.setText(results);
+            }
+        });
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        showToast("onCreateView");
-        Log.i("Citatum", "onCreateView");
-        return super.onCreateView(inflater, container, savedInstanceState);
+        binding = HubFragmentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        showToast("onViewCreate");
-        Log.i("Citatum", "onViewCreate");
+
+        initIt();
+
+        binding.intentButton.setOnClickListener(view1 -> {
+            Bundle result = new Bundle();
+            result.putString("resultText", binding.quoteEditText.getText().toString());
+            fragmentManager.setFragmentResult("change to RepositoryFragment", result);
+            mainActivity.changeFragment(view1);
+        });
     }
 
-    @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-        showToast("onViewStateRestored");
-        Log.i("Citatum", "onViewStateRestored");
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        showToast("onStart");
-        Log.i("Citatum", "onStart");
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        showToast("onResume");
-        Log.i("Citatum", "onResume");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        showToast("onPause");
-        Log.i("Citatum", "onPause");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        showToast("onStop");
-        Log.i("Citatum", "onStop");
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        showToast("onSaveInstanceState");
-        Log.i("Citatum", "onSaveInstanceState");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        showToast("onDestroyView");
-        Log.i("Citatum", "onDestroyView");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        showToast("onDestroy");
-        Log.i("Citatum", "onDestroy");
+    private void initIt() {
+        binding.pageName.setText(R.string.home_app_text);
+        binding.quoteEditText.setHint(R.string.write_text_request);
+        binding.intentButton.setText(R.string.add_button);
     }
 }
