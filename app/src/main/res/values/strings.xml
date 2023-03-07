@@ -4,7 +4,7 @@
     <string name="default_text">default</string>
 
     <string name="home_app_text">CITATUM</string>
-    <string name="tags_text">Tags:</string>
+    <string name="tags_text">Метки:</string>
     <string name="home_bookmark_name">Bookmark image</string>
     <string name="tags_name">Tags text</string>
 
@@ -37,4 +37,9 @@
     <string name="return_button">возврат</string>
 
     <string name="division_line">Line for division</string>
+    <string name="quote_create_title_hint">Название</string>
+    <string name="quote_create_author_hint">Автор</string>
+    <string name="quote_create_text_hint">Введите текст...</string>
+    <string name="quote_create_page_number_text_hint">Номер страницы:</string>
+    <string name="quote_create_page_number_hint">10</string>
 </resources>

@@ -1,25 +1,23 @@
 package com.corylab.citatum;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import com.corylab.citatum.databinding.ActivityMainBinding;
 import com.corylab.citatum.fragment.BottomNavigationFragment;
 import com.corylab.citatum.fragment.HubFragment;
 import com.corylab.citatum.fragment.LeftNavigationFragment;
+import com.corylab.citatum.fragment.QuoteCreateFragment;
 import com.corylab.citatum.fragment.RepositoryFragment;
+import com.corylab.citatum.fragment.WithoutBottomNavigationFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Fragment bottomHubFragment, hubFragment, repositoryFragment;
+    Fragment bottomHubFragment, withoutBottomNavigationFragment, hubFragment, repositoryFragment, quoteCreateFragment;
     FragmentManager fragmentManager;
 
     @Override
@@ -28,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomHubFragment = new BottomNavigationFragment();
+        withoutBottomNavigationFragment = new WithoutBottomNavigationFragment();
         hubFragment = new HubFragment();
         repositoryFragment = new RepositoryFragment();
+        quoteCreateFragment = new QuoteCreateFragment();
 
         if (savedInstanceState == null)
             initFragments();
@@ -55,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 if (repositoryFragment.isVisible())
                     return;
                 fragmentTransaction.replace(R.id.main_fragment_container_view, repositoryFragment);
+                break;
+            case R.id.create_button:
+                if (quoteCreateFragment.isVisible())
+                    return;
+                fragmentTransaction.replace(R.id.main_fragment_container_view, quoteCreateFragment);
+                fragmentTransaction.replace(R.id.bottom_fragment_container_view, withoutBottomNavigationFragment);
                 break;
         }
 
