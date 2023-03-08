@@ -2,10 +2,12 @@ package com.corylab.citatum.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -48,6 +50,14 @@ public class TagAdapter extends RecyclerView.Adapter<TagAdapter.TagViewHolder> {
     public void onBindViewHolder(@NonNull TagViewHolder holder, int position) {
         holder.tagText.setText(tags.get(position).getTag());
         holder.backgroundColor.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("RecyclerView","List click!");
+                Toast toast = Toast.makeText(context, "Recycler click!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
     }
 
     @Override

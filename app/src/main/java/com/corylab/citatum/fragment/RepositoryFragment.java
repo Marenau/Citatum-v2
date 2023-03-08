@@ -2,10 +2,13 @@ package com.corylab.citatum.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -66,5 +69,13 @@ public class RepositoryFragment extends Fragment {
         }
         TitleAdapter arrayAdapter = new TitleAdapter(mainActivity, R.layout.title_item, list);
         binding.listView.setAdapter(arrayAdapter);
+        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("ListView","List click!");
+                Toast toast = Toast.makeText(getContext(), "List click!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
     }
 }
