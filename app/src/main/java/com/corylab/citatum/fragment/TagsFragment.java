@@ -61,7 +61,7 @@ public class TagsFragment extends Fragment {
 
     private void generateItems() {
         List<Tag> list = new ArrayList<>();
-        for (int i = 0; i < 201; i++) {
+        for (int i = 0; i < 210; i++) {
             Tag temp = new Tag("Tag " + i);
             list.add(temp);
         }

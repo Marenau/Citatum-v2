@@ -60,7 +60,7 @@ public class RepositoryFragment extends Fragment {
 
     private void generateList() {
         List<Title> list = new ArrayList<>();
-        for (int i = 0; i < 201; i++) {
+        for (int i = 0; i < 210; i++) {
             Title temp = new Title("Title " + i, "Author " + i);
             list.add(temp);
         }
