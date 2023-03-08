@@ -33,49 +33,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home_bookmark" />
 
-    <!-- Отображает текст, переданный в текущий фрагмент -->
-    <TextView
-        android:id="@+id/transmitted_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!-- Кнопка, которая вызывает другой фрагмент -->
+    <Button
+        android:id="@+id/first_intent_button"
+        android:layout_width="190dp"
+        android:layout_height="100dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/tags_name"
-        android:fontFamily="@font/gothampro"
-        android:text="@string/default_text"
+        android:backgroundTint="@color/light_red"
+        android:fontFamily="@font/gothampro_medium"
+        android:text="Первый фрагмент"
         android:textColor="@color/black"
         android:textSize="@dimen/lite_text_size"
+        app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/red_bookmark" />
 
     <!-- Кнопка, которая вызывает другой фрагмент -->
     <Button
-        android:id="@+id/intent_button"
+        android:id="@+id/second_intent_button"
         android:layout_width="190dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
         android:backgroundTint="@color/light_red"
         android:fontFamily="@font/gothampro_medium"
-        android:text="@string/default_text"
+        android:text="Второй фрагмент"
         android:textColor="@color/black"
         android:textSize="@dimen/lite_text_size"
         app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transmitted_text" />
-
-    <!-- Поле ввода -->
-    <EditText
-        android:id="@+id/quote_edit_text"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        android:fontFamily="@font/gothampro_light"
-        android:inputType="textMultiLine"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intent_button" />
+        app:layout_constraintTop_toBottomOf="@+id/first_intent_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

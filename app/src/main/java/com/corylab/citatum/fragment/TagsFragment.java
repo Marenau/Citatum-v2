@@ -2,7 +2,6 @@ package com.corylab.citatum.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,20 +9,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentResultListener;
 
 import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
-import com.corylab.citatum.databinding.HubFragmentBinding;
+import com.corylab.citatum.databinding.RepositoryFragmentBinding;
 
-public class HubFragment extends Fragment {
+public class TagsFragment extends Fragment {
 
-    HubFragmentBinding binding;
+    RepositoryFragmentBinding binding;
     MainActivity mainActivity;
 
-    public HubFragment() {
-        super(R.layout.hub_fragment);
+    public TagsFragment() {
+        super(R.layout.tags_fragment);
     }
 
     @Override
@@ -40,7 +37,7 @@ public class HubFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding = HubFragmentBinding.inflate(inflater, container, false);
+        binding = RepositoryFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -51,9 +48,6 @@ public class HubFragment extends Fragment {
     }
 
     private void initIt() {
-        binding.pageName.setText(R.string.home_app_text);
-
-        binding.firstIntentButton.setOnClickListener(view -> mainActivity.changeFragment(view));
-        binding.secondIntentButton.setOnClickListener(view -> mainActivity.changeFragment(view));
+        binding.pageName.setText(R.string.tags_page);
     }
 }

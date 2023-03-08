@@ -13,11 +13,12 @@ import com.corylab.citatum.fragment.HubFragment;
 import com.corylab.citatum.fragment.LeftNavigationFragment;
 import com.corylab.citatum.fragment.QuoteCreateFragment;
 import com.corylab.citatum.fragment.RepositoryFragment;
+import com.corylab.citatum.fragment.TagsFragment;
 import com.corylab.citatum.fragment.WithoutBottomNavigationFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    Fragment bottomHubFragment, withoutBottomNavigationFragment, hubFragment, repositoryFragment, quoteCreateFragment;
+    Fragment bottomHubFragment, withoutBottomNavigationFragment, hubFragment, repositoryFragment, quoteCreateFragment, tagsFragment;
     FragmentManager fragmentManager;
 
     @Override
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         hubFragment = new HubFragment();
         repositoryFragment = new RepositoryFragment();
         quoteCreateFragment = new QuoteCreateFragment();
+        tagsFragment = new TagsFragment();
 
         if (savedInstanceState == null)
             initFragments();
@@ -46,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         switch (view.getId()) {
-            case R.id.return_button:
-                if (hubFragment.isVisible())
-                    return;
-                fragmentTransaction.replace(R.id.main_fragment_container_view, hubFragment);
-                break;
-            case R.id.intent_button:
+            case R.id.first_intent_button:
                 if (repositoryFragment.isVisible())
                     return;
                 fragmentTransaction.replace(R.id.main_fragment_container_view, repositoryFragment);
+                break;
+            case R.id.second_intent_button:
+                if (repositoryFragment.isVisible())
+                    return;
+                fragmentTransaction.replace(R.id.main_fragment_container_view, tagsFragment);
                 break;
             case R.id.create_button:
                 if (quoteCreateFragment.isVisible())

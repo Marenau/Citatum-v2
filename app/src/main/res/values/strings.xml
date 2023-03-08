@@ -42,4 +42,6 @@
     <string name="quote_create_text_hint">Введите текст...</string>
     <string name="quote_create_page_number_text_hint">Номер страницы:</string>
     <string name="quote_create_page_number_hint">10</string>
+
+    <string name="tags_page">Метки</string>
 </resources>
