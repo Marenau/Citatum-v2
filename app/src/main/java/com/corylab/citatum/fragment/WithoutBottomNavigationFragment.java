@@ -17,6 +17,6 @@ import com.corylab.citatum.databinding.WithoutBottomNavigationFragmentBinding;
 public class WithoutBottomNavigationFragment extends Fragment {
 
     public WithoutBottomNavigationFragment() {
-        super(R.layout.bottom_navigation_fragment);
+        super(R.layout.without_bottom_navigation_fragment);
     }
 }

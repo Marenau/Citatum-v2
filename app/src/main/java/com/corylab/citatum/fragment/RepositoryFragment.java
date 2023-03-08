@@ -2,20 +2,23 @@ package com.corylab.citatum.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentResultListener;
 
 import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
+import com.corylab.citatum.adapter.Title;
+import com.corylab.citatum.adapter.TitleAdapter;
 import com.corylab.citatum.databinding.RepositoryFragmentBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RepositoryFragment extends Fragment {
 
@@ -52,5 +55,16 @@ public class RepositoryFragment extends Fragment {
 
     private void initIt() {
         binding.pageName.setText(R.string.repository_page);
+        generateList();
+    }
+
+    private void generateList() {
+        List<Title> list = new ArrayList<>();
+        for (int i = 0; i < 201; i++) {
+            Title temp = new Title("Title " + i, "Author " + i);
+            list.add(temp);
+        }
+        TitleAdapter arrayAdapter = new TitleAdapter(mainActivity, R.layout.title_item, list);
+        binding.listView.setAdapter(arrayAdapter);
     }
 }

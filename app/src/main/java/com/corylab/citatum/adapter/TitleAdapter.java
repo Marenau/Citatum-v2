@@ -1,55 +1,41 @@
 package com.corylab.citatum.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.corylab.citatum.R;
 
 import java.util.List;
 
-public class TitleAdapter extends RecyclerView.Adapter<TitleAdapter.TagViewHolder> {
+public class TitleAdapter extends ArrayAdapter<Title> {
 
-    Context context;
-    List<Tag> tags;
+    private LayoutInflater inflater;
+    private int layout;
+    private List<Title> titles;
 
-    public TitleAdapter() {
-        this.context = context;
-        this.tags = tags;
+    public TitleAdapter(Context context, int resource, List<Title> states) {
+        super(context, resource, states);
+        this.titles = states;
+        this.layout = resource;
+        this.inflater = LayoutInflater.from(context);
     }
 
-    public final static class TagViewHolder extends RecyclerView.ViewHolder {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-        CardView backgroundColor;
-        TextView tagText;
+        View view = inflater.inflate(this.layout, parent, false);
 
-        public TagViewHolder(@NonNull View itemView) {
-            super(itemView);
-            backgroundColor = itemView.findViewById(R.id.rectangle_of_tag);
-            tagText = itemView.findViewById(R.id.tag_text);
-        }
+        TextView nameView = view.findViewById(R.id.title_text);
+        TextView capitalView = view.findViewById(R.id.author_text);
+
+        Title title = titles.get(position);
+
+        nameView.setText(title.getTitle());
+        capitalView.setText(title.getAuthor());
+
+        return view;
     }
-
-    @NonNull
-    @Override
-    public TitleAdapter.TagViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View tagItems = LayoutInflater.from(context).inflate(R.layout.tag_item, parent, false);
-        return new TitleAdapter.TagViewHolder(tagItems);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull TitleAdapter.TagViewHolder holder, int position) {
-        holder.tagText.setText(tags.get(position).getTag());
-        holder.backgroundColor.setCardBackgroundColor(Color.parseColor("#C4C4C4"));
-    }
-
-    @Override
-    public int getItemCount() { return tags.size(); }
 }
