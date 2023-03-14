@@ -34,7 +34,7 @@
     <string name="description_of_edit_text">Write text here</string>
 
     <string name="repository_page">Репозиторий</string>
-    <string name="return_button">возврат</string>
+    <string name="return_button">перейти</string>
 
     <string name="division_line">Line for division</string>
     <string name="quote_create_title_hint">Название</string>

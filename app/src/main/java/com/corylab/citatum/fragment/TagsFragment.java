@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,6 +60,12 @@ public class TagsFragment extends Fragment {
 
     private void initIt() {
         binding.pageName.setText(R.string.tags_page);
+
+        Bundle trBundle = getArguments();
+        if (trBundle != null && trBundle.containsKey("text")) {
+            binding.textView.setText(trBundle.getString("text"));
+        }
+
         binding.button.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putString("text", binding.editText.getText().toString());
