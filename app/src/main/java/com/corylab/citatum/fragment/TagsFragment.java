@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,18 +59,10 @@ public class TagsFragment extends Fragment {
 
     private void initIt() {
         binding.pageName.setText(R.string.tags_page);
-        generateItems();
-    }
-
-    private void generateItems() {
-        List<Tag> list = new ArrayList<>();
-        for (int i = 0; i < 210; i++) {
-            Tag temp = new Tag("Tag " + i);
-            list.add(temp);
-        }
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mainActivity, RecyclerView.VERTICAL, false);
-        binding.recyclerView.setLayoutManager(layoutManager);
-        TagAdapter tagAdapter = new TagAdapter(mainActivity, list);
-        binding.recyclerView.setAdapter(tagAdapter);
+        binding.button.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("text", binding.editText.getText().toString());
+            Navigation.findNavController(view).navigate(R.id.action_tagsFragment_to_repositoryFragment, bundle);
+        });
     }
 }

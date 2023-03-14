@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
@@ -53,7 +54,7 @@ public class HubFragment extends Fragment {
     private void initIt() {
         binding.pageName.setText(R.string.home_app_text);
 
-        binding.firstIntentButton.setOnClickListener(view -> mainActivity.changeFragment(view));
-        binding.secondIntentButton.setOnClickListener(view -> mainActivity.changeFragment(view));
+        binding.firstIntentButton.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.action_hubFragment_to_repositoryFragment));
+        binding.secondIntentButton.setOnClickListener(view -> Navigation.findNavController(view).navigate(R.id.action_hubFragment_to_tagsFragment));
     }
 }

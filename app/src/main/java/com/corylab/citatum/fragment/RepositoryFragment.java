@@ -2,26 +2,19 @@ package com.corylab.citatum.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.corylab.citatum.MainActivity;
 import com.corylab.citatum.R;
-import com.corylab.citatum.adapter.Title;
-import com.corylab.citatum.adapter.TitleAdapter;
 import com.corylab.citatum.databinding.RepositoryFragmentBinding;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class RepositoryFragment extends Fragment {
 
@@ -58,19 +51,10 @@ public class RepositoryFragment extends Fragment {
 
     private void initIt() {
         binding.pageName.setText(R.string.repository_page);
-        generateList();
-    }
-
-    private void generateList() {
-        List<Title> list = new ArrayList<>();
-        for (int i = 0; i < 210; i++) {
-            Title temp = new Title("Title " + i, "Author " + i);
-            list.add(temp);
-        }
-        TitleAdapter arrayAdapter = new TitleAdapter(mainActivity, R.layout.title_item, list);
-        binding.listView.setAdapter(arrayAdapter);
-        binding.listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            Log.i("ListView","List click!");
+        binding.button.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("text", binding.editText.getText().toString());
+            Navigation.findNavController(view).navigate(R.id.action_repositoryFragment_to_tagsFragment, bundle);
         });
     }
 }

@@ -42,8 +42,6 @@ public class BottomNavigationFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         initIt();
-
-        binding.createButton.setOnClickListener(view1 -> mainActivity.changeFragment(view1));
     }
 
     private void initIt() {
