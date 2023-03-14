@@ -53,12 +53,12 @@ public class TagsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        generateItems();
         initIt();
     }
 
     private void initIt() {
         binding.pageName.setText(R.string.tags_page);
+        generateItems();
     }
 
     private void generateItems() {

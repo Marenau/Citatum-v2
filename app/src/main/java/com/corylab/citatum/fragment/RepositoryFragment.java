@@ -69,13 +69,8 @@ public class RepositoryFragment extends Fragment {
         }
         TitleAdapter arrayAdapter = new TitleAdapter(mainActivity, R.layout.title_item, list);
         binding.listView.setAdapter(arrayAdapter);
-        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.i("ListView","List click!");
-                Toast toast = Toast.makeText(getContext(), "List click!", Toast.LENGTH_SHORT);
-                toast.show();
-            }
+        binding.listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Log.i("ListView","List click!");
         });
     }
 }
